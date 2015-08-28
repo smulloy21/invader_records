@@ -23,17 +23,17 @@
       <input type="radio" name="venue" value="<%= venue.id() %>"> <%= venue.name() %><br>
     <% end %>
     <input type="text" name="add_date" id="add_date" placeholder="date">
-    <button type="submit">conquer!</button>
+    <button type="submit">conquer</button>
   </form>
 
-  <h4>don't see the venue you want?</h4>
+  <h4 class="negative_margin">don't see the venue you want?</h4>
 <% end %>
 <h4>add venue</h4>
 <form class="" action="/venues/new" method="post">
   <input type="hidden" name="band_id" value="<%= @band.id %>">
   <input type="text" name="venue_name" id="venue_name" placeholder="venue name">
   <input type="text" name="new_date" id="new_date" placeholder="date">
-  <button type="submit">conquer!</button>
+  <button type="submit">conquer</button>
 </form>
 
 <% if @conquests_not_canceled.any? %>

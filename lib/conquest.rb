@@ -1,6 +1,8 @@
 class Conquest < ActiveRecord::Base
   belongs_to :band
   belongs_to :venue
+  validates(:band_id, :presence => true)
+  validates(:venue_id, :presence => true)
   scope(:not_canceled, -> do
     where({:canceled => false})
   end)

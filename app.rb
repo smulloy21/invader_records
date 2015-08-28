@@ -33,7 +33,9 @@ end
 
 post('/bands/:id/add_venue') do
   @band = Band.find(params.fetch('id').to_i)
-  Conquest.create({:band_id => @band.id, :venue_id => params.fetch('venue'), :date => params.fetch('add_date'), :canceled => false})
+  if params.fetch('venue')
+    Conquest.create({:band_id => @band.id, :venue_id => params.fetch('venue'), :date => params.fetch('add_date'), :canceled => false})
+  end
   redirect('/bands/' + @band.id.to_s)
 end
 

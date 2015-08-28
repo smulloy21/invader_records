@@ -42,7 +42,7 @@ describe('adding a venue to a band', {:type => :feature}) do
     click_link('Genghis Khan')
     fill_in('venue_name', :with => 'Beijing')
     fill_in('new_date', :with => '1215')
-    click_button('conquer!')
+    click_button('conquer')
     expect(page).to have_content('Beijing')
   end
 end
@@ -54,7 +54,7 @@ describe('canceling a show', {:type => :feature}) do
     click_link('Richard The Lionhearted')
     fill_in('venue_name', :with => 'Cyprus')
     fill_in('new_date', :with => '1191')
-    click_button('conquer!')
+    click_button('conquer')
     click_button('cancel')
     expect(page).to have_content('CANCELED')
   end
