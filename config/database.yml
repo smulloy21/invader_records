@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  database: invader_records_development
+
+test:
+  adapter: postgresql
+  database: invader_records_test
