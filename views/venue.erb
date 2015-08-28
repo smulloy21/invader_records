@@ -1,0 +1,27 @@
+<h1><%= @venue.name %></h1>
+
+<ul>
+  <% @conquests.each do |conquest| %>
+    <li>
+      <a href="/venues/<%= conquest.venue_id %>">
+      <% if conquest.canceled %>
+        <span class="canceled"><%= conquest.date %> <%= Band.find(conquest.band_id).name %><span></a> <span>CANCELED</span>
+      <% else %>
+        <%= conquest.date %> <%= Band.find(conquest.band_id).name %></a>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<h4>update venue</h4>
+<form class="" action="/venues/<%= @venue.id %>/edit" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <input type="text" name="new_name" id="new_name" placeholder="name">
+  <button type="submit">update</button>
+</form>
+<form class="" action="/venues/<%= @venue.id %>/delete" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit">delete venue</button>
+</form>
+
+<a href="/">home</a>

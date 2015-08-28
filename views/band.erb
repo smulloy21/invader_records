@@ -1,0 +1,67 @@
+<h1 class="no-bottom"><%= @band.name %></h1>
+<h3 class="tagline"><%= @band.tagline %></h3>
+<h2>world tour</h2>
+
+<ul>
+  <% @conquests.each do |conquest| %>
+    <li>
+      <a href="/venues/<%= conquest.venue_id %>">
+      <% if conquest.canceled %>
+        <span class="canceled"><%= conquest.date %> <%= Venue.find(conquest.venue_id).name %></span></a>
+        <span>CANCELED</span>
+      <% else %>
+        <%= conquest.date %> <%= Venue.find(conquest.venue_id).name %></a>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<% if @venues.any? %>
+  <h4>conquer another venue</h4>
+  <form class="" action="/bands/<%= @band.id %>/add_venue" method="post">
+    <% @venues.each() do |venue| %>
+      <input type="radio" name="venue" value="<%= venue.id() %>"> <%= venue.name() %><br>
+    <% end %>
+    <input type="text" name="add_date" id="add_date" placeholder="date">
+    <button type="submit">conquer!</button>
+  </form>
+
+  <h4>don't see the venue you want?</h4>
+<% end %>
+<h4>add venue</h4>
+<form class="" action="/venues/new" method="post">
+  <input type="hidden" name="band_id" value="<%= @band.id %>">
+  <input type="text" name="venue_name" id="venue_name" placeholder="venue name">
+  <input type="text" name="new_date" id="new_date" placeholder="date">
+  <button type="submit">conquer!</button>
+</form>
+
+<% if @conquests_not_canceled.any? %>
+  <h4>feeling overrun?<br><br>cancel a show</h4>
+  <form class="" action="/bands/<%= @band.id %>/cancel_show" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <select id="venue_delete" name="venue_delete">
+      <% @conquests_not_canceled.each do |conquest| %>
+        <option value="<%= conquest.venue_id %>"><%= Venue.find(conquest.venue_id).name %></option>
+      <% end %>
+    </select>
+    <button type="submit">cancel</button>
+  </form>
+<% end %>
+
+<h4>update band name or tagline</h4>
+<form class="" action="/bands/<%= @band.id %>/edit" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <input type="text" name="new_name" id="new_name" placeholder="name">
+  <input type="text" name="new_tagline" id="new_tagline" placeholder="tagline">
+  <button type="submit">update</button>
+</form>
+<form class="" action="/bands/<%= @band.id %>/delete" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit">delete band</button>
+</form>
+<br>
+<br>
+<a href="/">home</a>
+<br>
+<br>

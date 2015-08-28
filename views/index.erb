@@ -1,0 +1,19 @@
+<h1>invader records</h1>
+
+<h2>bands</h2>
+
+<% @bands.each do |band| %>
+  <h3><a href="/bands/<%= band.id %>"><%= band.name %></a></h3>
+<% end %>
+
+<h4>take up arms and join today!</h4>
+<form class="" action="/bands/new" method="post">
+  <input type="text" name="name" id="name" placeholder="band name">
+  <input type="text" name="tagline" id="tagline" placeholder="tagline">
+  <button type="submit">add band</button>
+</form>
+
+<form class="" action="/clear" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit">exterminate</button>
+</form>
