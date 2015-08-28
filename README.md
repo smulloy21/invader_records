@@ -6,7 +6,7 @@
 
 ## Description
 
-Check out when conquering bands invaded a venue near you. Take up arms and create a new band, and add venues to conquer. Edit or delete your band or venue at any time.
+Check out when conquering bands invaded a venue near you. Take up arms and create a new band, and add venues to invade. Edit or delete your band or venue at any time.
 
 ## Setup
 
