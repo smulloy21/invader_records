@@ -1,18 +1,29 @@
 body {
-  background-color: #141414;
+  background: #141414 url('/img/bg8.png') top left no-repeat;
+  background-size: cover;
   color: #888;
   font-family: 'Esteban', serif;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   color: #990000;
 }
+.container {
+  width: 70%;
+}
 h1 {
-  margin: 2em 0 1.5em 0;
+  margin: .5em 0 .5em 0;
   text-align: center;
   font-family: 'Metal Mania', cursive;
+  letter-spacing: 3px;
+  font-size: 5em;
 }
 h2 {
   margin: .5em 0;
   font-family: 'Metal Mania', cursive;
+  letter-spacing: 3px;
+  font-size: 3.5em;
+}
+h3 {
+  font-size: 2em;
 }
 h4 {
   margin-top: 3em;
@@ -24,12 +35,16 @@ a {
 a:hover {
   color: #004d99
 }
+li {
+  font-size: 2em;
+}
 .no-bottom {
-  margin-bottom: .5em;
+  margin-bottom: .25em;
   text-align: center;
 }
 .tagline {
   text-align: center;
+  margin-top: -.5em;
   margin-bottom: 1.5em;
 }
 .negative_margin {
@@ -41,7 +56,7 @@ input {
   padding-left: 5px;
   padding-top:3px;
   box-shadow:inset 0 0 2px 0 #888;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 }
 input[radio] {
   color: #888;
@@ -64,8 +79,44 @@ button:hover {
 }
 button:focus {
   outline: #990000;
-  border:1px solid #990000;
+  border:2px solid #990000;
 }
 .canceled {
   text-decoration: line-through;
+}
+
+
+@media screen and (max-width: 800px) {
+  .container {
+    width: 80%;
+  }
+  h1 {
+    font-size: 3.5em;
+  }
+  h2 {
+    font-size: 2.5em;
+  }
+  h3 {
+    font-size: 2.25em;
+  }
+  li {
+    font-size: 2em;
+  }
+}
+@media screen and (max-width: 575px) {
+  .container {
+    width: 90%;
+  }
+  h1 {
+    font-size: 3em;
+  }
+  h2 {
+    font-size: 2em;
+  }
+  h3 {
+    font-size: 1.75em;
+  }
+  li {
+    font-size: 1.5em;
+  }
 }

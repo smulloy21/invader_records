@@ -7,14 +7,17 @@
     <li>
       <a href="/venues/<%= conquest.venue_id %>">
       <% if conquest.canceled %>
-        <span class="canceled"><%= conquest.date %> <%= Venue.find(conquest.venue_id).name %></span></a>
+        <span class="canceled"><%= conquest.date %> - <%= Venue.find(conquest.venue_id).name %></span></a>
         <span>CANCELED</span>
       <% else %>
-        <%= conquest.date %> <%= Venue.find(conquest.venue_id).name %></a>
+        <%= conquest.date %> - <%= Venue.find(conquest.venue_id).name %></a>
       <% end %>
     </li>
   <% end %>
 </ul>
+
+<br>
+<br>
 
 <% if @venues.any? %>
   <h4>conquer another venue</h4>
@@ -43,7 +46,7 @@
     <select id="venue_delete" name="venue_delete" required>
       <option value="" disabled selected>choose venue</option>
       <% @conquests_not_canceled.each do |conquest| %>
-        <option value="<%= conquest.venue_id %>"><%= Venue.find(conquest.venue_id).name %></option>
+        <option name="sub_link" value="<%= conquest.venue_id %>"><%= Venue.find(conquest.venue_id).name %></option>
       <% end %>
     </select>
     <button type="submit">cancel</button>
