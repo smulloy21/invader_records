@@ -1,6 +1,5 @@
-# ENV['RACK_ENV'] = 'development'
+ENV['RACK_ENV'] = 'development'
 require 'active_record'
-ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
 require('bundler/setup')
 Bundler.require(:default)
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
@@ -26,7 +25,7 @@ end
 
 get('/bands/:id') do
   @band = Band.find(params.fetch('id').to_i)
-  @conquests = @band.conquests
+  @conquests = @band.conquests.sort_by(&:date)
   @venues = Venue.all - @band.venues
   @conquests_not_canceled = @band.conquests.not_canceled
   erb(:band)
@@ -47,8 +46,8 @@ end
 
 patch('/bands/:id/cancel_show') do
   @band = Band.find(params.fetch('id').to_i)
-  conquests = Conquest.find_by_band_and_venue(@band.id, params.fetch('venue_delete'))
-  conquests.each { |conquest| Conquest.update(conquest.id, {:canceled => true}) }
+  conquest = Conquest.find_by_band_and_venue(@band.id, params.fetch('venue_delete').to_i)
+  Conquest.update(conquest.id, {:canceled => true})
   redirect('/bands/' + @band.id.to_s)
 end
 

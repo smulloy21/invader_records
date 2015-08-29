@@ -3,7 +3,7 @@
 <ul>
   <% @conquests.each do |conquest| %>
     <li>
-      <a href="/venues/<%= conquest.venue_id %>">
+      <a href="/bands/<%= conquest.band_id %>">
       <% if conquest.canceled %>
         <span class="canceled"><%= conquest.date %> <%= Band.find(conquest.band_id).name %><span></a> <span>CANCELED</span>
       <% else %>

@@ -40,7 +40,8 @@
   <h4>feeling overrun?<br><br>cancel a show</h4>
   <form class="" action="/bands/<%= @band.id %>/cancel_show" method="post">
     <input type="hidden" name="_method" value="patch">
-    <select id="venue_delete" name="venue_delete">
+    <select id="venue_delete" name="venue_delete" required>
+      <option value="" disabled selected>choose venue</option>
       <% @conquests_not_canceled.each do |conquest| %>
         <option value="<%= conquest.venue_id %>"><%= Venue.find(conquest.venue_id).name %></option>
       <% end %>
