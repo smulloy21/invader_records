@@ -58,8 +58,9 @@ input {
   box-shadow:inset 0 0 2px 0 #888;
   letter-spacing: 2px;
 }
-input[radio] {
+form > input[radio] {
   color: #888;
+  margin-right: 30em;
 }
 input:focus {
   outline: #990000;
