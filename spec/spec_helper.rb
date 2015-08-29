@@ -1,7 +1,7 @@
 ENV['RACK_ENV'] = 'test'
 
 require("bundler/setup")
-Bundler.require(:default, :test)
+Bundler.require(:test)
 set(:root, Dir.pwd())
 
 require('capybara/rspec')
