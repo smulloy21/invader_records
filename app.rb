@@ -1,4 +1,4 @@
-# ENV['RACK_ENV'] = 'development'
+ENV['RACK_ENV'] = 'development'
 ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
 require('bundler/setup')
 Bundler.require(:default)
