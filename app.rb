@@ -25,9 +25,9 @@ end
 
 get('/bands/:id') do
   @band = Band.find(params.fetch('id').to_i)
-  @conquests = @band.conquests.sort_by(&:date)
+  @conquests = @band.conquests.sort_by(&:created_at)
   @venues = Venue.all - @band.venues
-  @conquests_not_canceled = @band.conquests.not_canceled.sort_by(&:date)
+  @conquests_not_canceled = @band.conquests.not_canceled.sort_by(&:created_at)
   erb(:band)
 end
 
