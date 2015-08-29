@@ -8,6 +8,8 @@
 
 Check out when conquering bands invaded a venue near you. Take up arms and create a new band, and add venues to invade. Edit or delete your band or venue at any time.
 
+link on heroku: https://invader-records.herokuapp.com/
+
 ## Setup
 
 * _Clone from GitHub_
