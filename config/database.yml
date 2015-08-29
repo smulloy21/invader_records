@@ -1,6 +1,7 @@
 development:
   adapter: postgresql
   database: invader_records_development
+  host: localhost
 
 test:
   adapter: postgresql

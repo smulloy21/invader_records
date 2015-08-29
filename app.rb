@@ -1,10 +1,8 @@
-# ENV['RACK_ENV'] = 'development'
+ENV['RACK_ENV'] = 'development'
 require('activerecord')
 ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
-require('sinatra')
-require('sinatra/reloader')
-require('sinatra/activerecord')
-also_reload('./lib/**/*.rb')
+require('bundler/setup')
+Bundler.require(:default)
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 
 get('/') do

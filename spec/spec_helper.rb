@@ -1,10 +1,8 @@
-require('rspec')
-require('pg')
-require('sinatra/activerecord')
-require('product')
-require('order')
-require('customer')
-require('cart')
+ENV['RACK_ENV'] = 'test'
+
+require("bundler/setup")
+Bundler.require(:default, :test)
+set(:root, Dir.pwd())
 
 require('capybara/rspec')
 Capybara.app = Sinatra::Application
