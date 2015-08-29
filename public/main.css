@@ -3,7 +3,7 @@ body {
   color: #888;
   font-family: 'Esteban', serif;
   letter-spacing: 3px;
-  color: #FFCE00;
+  color: #990000;
 }
 h1 {
   margin: 2em 0 1.5em 0;
@@ -17,6 +17,12 @@ h2 {
 h4 {
   margin-top: 3em;
   color: #888;
+}
+a {
+  color: #004d99
+}
+a:hover {
+  color: #004d99
 }
 .no-bottom {
   margin-bottom: .5em;
@@ -41,8 +47,8 @@ input[radio] {
   color: #888;
 }
 input:focus {
-  outline: #888;
-  border:1px solid #888;
+  outline: #990000;
+  border:1px solid #990000;
 }
 button {
   background-color: #333;
@@ -54,11 +60,11 @@ button {
   font-family: 'Metal Mania', cursive;
 }
 button:hover {
-  color: #FFCE00;
+  color: #990000;
 }
 button:focus {
-  outline: #888;
-  border:1px solid #888;
+  outline: #990000;
+  border:1px solid #990000;
 }
 .canceled {
   text-decoration: line-through;

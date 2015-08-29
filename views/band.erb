@@ -20,7 +20,7 @@
   <h4>conquer another venue</h4>
   <form class="" action="/bands/<%= @band.id %>/add_venue" method="post">
     <% @venues.each() do |venue| %>
-      <input type="radio" name="venue" value="<%= venue.id() %>"> <%= venue.name() %><br>
+      <input type="radio" name="venue" value="<%= venue.id() %>" required> <%= venue.name() %><br>
     <% end %>
     <input type="text" name="add_date" id="add_date" placeholder="date">
     <button type="submit">conquer</button>
