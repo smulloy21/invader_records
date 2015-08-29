@@ -1,6 +1,5 @@
 require('spec_helper')
 
-
 describe('updating a venue', {:type => :feature}) do
   it('allows a user to update a venue') do
     band = Band.create({:name => 'Napoleon'})
